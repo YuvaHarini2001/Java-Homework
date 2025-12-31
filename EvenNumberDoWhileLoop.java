@@ -2,12 +2,17 @@ class EvenNumberDoWhileLoop
 {
 	public static void main(String[] args)
 	{
-		int i =2;
+		int i = 1;
+		
 		do
 		{
-			System.out.println("Even Number:"+i);
+			if(i%2==0)
+			{
+				System.out.println("Even Number:"+i);
+			}
 			
-			i+=2;
+			i++;
+			
 		}while(i<=30);
 	}
 }

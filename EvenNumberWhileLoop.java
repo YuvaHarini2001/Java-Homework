@@ -3,12 +3,16 @@ class EvenNumberWhileLoop
 	public static void main(String[] args)
 	{
 		
-		int i = 2;
+		int i = 1;
 		while(i<=30)
 		{
-			System.out.println("Even Number:"+i);
 			
-			i+=2;
+			if(i%2==0)
+			{
+				System.out.println("Even Number:"+i);
+			}
+			
+			i++;
 		}
 	}
 }
