@@ -5,14 +5,14 @@ class Pattern3
 	{
 		Scanner sc = new Scanner(System.in);
 		
-		int i, j;
+		int i,s,j;
 		
 		System.out.print("Enter the number of Rows :");
 		int rows = sc.nextInt();
 		
 		for (i = 1 ; i <= rows; i++ ) 
 		{
-			for (j = 1 ; j <= rows - i; j++ ) 
+			for (s = 1 ; s <= rows - i; s++ ) 
 			{
 				System.out.print(" ");	
 			}
@@ -25,7 +25,7 @@ class Pattern3
 		
 		for (i = rows - 1 ; i > 0; i-- ) 
 		{
-			for (j = 1 ; j <= rows - i; j++ ) 
+			for (s = 1 ; s<= rows - i; s++ ) 
 			{
 				System.out.print(" ");
 			}
