@@ -30,8 +30,8 @@ class Registration
 			
 					{
 						System.out.println("Enter the username :"+(index+1));
-						System.out.println("Enter the password:"+(index+1));
 						user_name[index] = sc1.nextLine();
+						System.out.println("Enter the password:"+(index+1));
 						password[index] =sc1.nextLine();
 						index++;
 				
