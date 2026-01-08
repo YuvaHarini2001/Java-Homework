@@ -24,7 +24,8 @@ class Employee1
 			switch(choice)
 			{
 				case 1:
-			
+					
+					if(index<employee_name.length)
 					{
 						System.out.println("Enter the employee name :"+(index+1));
 						employee_name[index] = sc1.nextLine();
@@ -32,14 +33,18 @@ class Employee1
 				
 						System.out.println("  ");
 					}
+					else
+					{
+						System.out.println("Employee name is full");
+					}
 					break;
 			
 				case 2:
-			
+					
 					for(int i =0;i<index;i++)
-					{
-						System.out.print(employee_name[i]+"  ");
-					}
+						{
+							System.out.print(employee_name[i]+"  ");
+						}
 					break;
 				
 				case 3:

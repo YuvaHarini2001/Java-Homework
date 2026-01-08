@@ -25,6 +25,8 @@ class Registration
 			switch(choice)
 			{
 				case 1:
+				
+					if(index<user_name.length)
 			
 					{
 						System.out.println("Enter the username :"+(index+1));
@@ -35,16 +37,39 @@ class Registration
 				
 						System.out.println("  ");
 					}
-					break;
-				case 2:
-			
-					for(int i =0;i<index;i++)
+					else
 					{
-						System.out.println(user_name[i]+"  ");
-						System.out.println(password[i]+"  ");
+						System.out.println("Username is full");
 					}
 					break;
-				
+				case 2:
+						String username;
+						String pass;
+					
+					for(int i =0;i<index;i++)
+					{
+						username=user_name[i];
+						pass=password[i];
+						
+						
+						if(user_name[i].equals(username))
+						{
+							if((user_name[i].equals(username))&&(password[i].equals(pass)))
+							{
+								System.out.println("User Name:"+username+"  ");
+								System.out.println("Password:"+pass+"  ");
+							}
+							else
+							{
+								System.out.println("Invalid password");						    
+							}
+						}
+						else
+						{
+							System.out.println("Invalid Username");
+						}
+					}
+					break;
 				case 3:
 			
 					System.out.println("Exit");

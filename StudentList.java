@@ -24,7 +24,8 @@ class StudentList
 			switch(choice)
 			{
 				case 1:
-			
+					
+					if(index<student_name.length)
 					{
 						System.out.println("Enter the student name :"+(index+1));
 						student_name[index] = sc1.nextLine();
@@ -32,13 +33,28 @@ class StudentList
 				
 						System.out.println("  ");
 					}
+					else
+					{
+						System.out.println("Student name is full");
+					}
 					break;
 			
 				case 2:
-			
+					
+					String studentname;
+					
 					for(int i =0;i<index;i++)
 					{
-						System.out.print(student_name[i]+"  ");
+						studentname = student_name[i];
+						
+						if(student_name[i].equals(studentname))
+						{
+							System.out.print(studentname+"  ");
+						}
+						else
+						{
+							System.out.println("Invalid studentname");
+						}
 					}
 					break;
 				

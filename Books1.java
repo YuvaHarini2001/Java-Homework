@@ -25,7 +25,8 @@ class Books1
 			switch(choice)
 			{
 				case 1:
-			
+				
+					if(index<book_name.length)
 					{
 						System.out.println("Enter the book_name:"+(index+1));
 						book_name[index] = sc1.nextLine();
@@ -35,15 +36,38 @@ class Books1
 				
 						System.out.println("  ");
 					}
+					else
+					{
+						System.out.println("Book Name is Full");
+					}
 					break;
 				
 				case 2:
+				
+					int Id;
+					String bookname;
 			
 					for(int i =0;i<index;i++)
 					{
-						System.out.println("**************************");
-						System.out.println("Book Id:"+book_id[i]+"  ");
-						System.out.println("Book Name:"+book_name[i]+"  ");
+						Id = book_id[i];
+						bookname = book_name[i];
+						
+						if(book_id[i]==(Id))
+						{
+							if((book_id[i]==(Id))&&(book_name[i].equals(bookname)))
+							{
+								System.out.println("Book Id:"+Id);
+								System.out.println("Book Name:"+bookname);
+							}
+							else
+							{
+								System.out.println("Invalid book name");
+							}
+						}
+						else
+						{
+							System.out.println("Invalid book Id");
+						}
 					}
 					break;
 				
