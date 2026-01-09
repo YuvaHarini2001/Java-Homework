@@ -43,14 +43,13 @@ class Books1
 					break;
 				
 				case 2:
-				
-					int Id;
-					String bookname;
 			
 					for(int i =0;i<index;i++)
 					{
-						Id = book_id[i];
-						bookname = book_name[i];
+						System.out.println("Enter the Id:");
+						int Id = sc.nextInt();
+						System.out.println("Enter the Book Name:");
+						String bookname = sc1.nextLine();
 						
 						if(book_id[i]==(Id))
 						{
