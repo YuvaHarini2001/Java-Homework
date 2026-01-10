@@ -44,20 +44,19 @@ class Registration
 					break;
 				case 2:
 					
-					for(int i =0;i<index;i++)
 					{
 						System.out.println("Enter the username:");
 						String username = sc1.nextLine();
 						System.out.println("Enter the pass:");
 						String pass = sc1.nextLine();
-						
-						
+						 
+						for(int i = 0;i<index;i++)
+										
 						if(user_name[i].equals(username))
 						{
-							if((user_name[i].equals(username))&&(password[i].equals(pass)))
+							if(password[i].equals(pass))
 							{
-								System.out.println("User Name:"+username+"  ");
-								System.out.println("Password:"+pass+"  ");
+								System.out.println("Login Successful");
 							}
 							else
 							{
