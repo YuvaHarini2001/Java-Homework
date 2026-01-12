@@ -17,7 +17,7 @@ class Books1
 		
 		do
 		{
-			System.out.print("Enter the choice:\n1.Add Books Name\n2.See the list of books with their id\n3.exit");
+			System.out.print("Enter the choice:\n1.Add Books Name\n2.See the list of books with their id\n3.Search the book by Id\n4.Exit");
 			System.out.println(" ");
 			
 			choice = sc.nextInt();
@@ -46,32 +46,30 @@ class Books1
 			
 					for(int i =0;i<index;i++)
 					{
-						System.out.println("Enter the Id:");
-						int Id = sc.nextInt();
-						System.out.println("Enter the Book Name:");
-						String bookname = sc1.nextLine();
-						
-						if(book_id[i]==(Id))
-						{
-							if((book_id[i]==(Id))&&(book_name[i].equals(bookname)))
-							{
-								System.out.println("Book Id:"+Id);
-								System.out.println("Book Name:"+bookname);
-							}
-							else
-							{
-								System.out.println("Invalid book name");
-							}
-						}
-						else
-						{
-							System.out.println("Invalid book Id");
-						}
+						System.out.println(book_id[i]+ " - " + book_name[i]);
 					}
 					break;
 				
 				case 3:
-			
+					{
+						System.out.println("enter the Search ID:");
+						int searchId = sc.nextInt();
+						
+						for(int i = 0; i<book_id.length;i++)
+						{
+							if(searchId==book_id[i])
+							{
+								System.out.println("Book Found:"+"  "+book_name[i]);
+							}
+							else
+							{
+								System.out.println("Book not Found");
+							}
+						}
+					}
+					break;
+				case 4:
+					
 					System.out.println("Exit");
 					break;
 				

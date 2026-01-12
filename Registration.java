@@ -51,24 +51,26 @@ class Registration
 						String pass = sc1.nextLine();
 						 
 						for(int i = 0;i<index;i++)
-										
-						if(user_name[i].equals(username))
 						{
-							if(password[i].equals(pass))
+							if(user_name[i].equals(username))
 							{
-								System.out.println("Login Successful");
+								if(password[i].equals(pass))
+								{
+									System.out.println("Login Successful");
+								}
+								else
+								{
+									System.out.println("Invalid password");						    
+								}
 							}
 							else
-							{
-								System.out.println("Invalid password");						    
-							}
+								{
+									System.out.println("Invalid Username");
+								}
 						}
-						else
-						{
-							System.out.println("Invalid Username");
-						}
+						break;
 					}
-					break;
+					
 				case 3:
 			
 					System.out.println("Exit");
