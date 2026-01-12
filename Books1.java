@@ -52,7 +52,7 @@ class Books1
 				
 				case 3:
 					{
-						for(int i = 0; i<book_id.length;i++)
+						for(int i = 0; i<index;i++)
 						{
 							System.out.println("enter the Search ID:");
 							int searchId = sc.nextInt();
