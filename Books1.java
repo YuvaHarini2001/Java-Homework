@@ -52,18 +52,21 @@ class Books1
 				
 				case 3:
 					{
-						System.out.println("enter the Search ID:");
-						int searchId = sc.nextInt();
-						
 						for(int i = 0; i<book_id.length;i++)
 						{
-							if(searchId==book_id[i])
+							System.out.println("enter the Search ID:");
+							int searchId = sc.nextInt();
+						
+						
 							{
-								System.out.println("Book Found:"+"  "+book_name[i]);
-							}
-							else
-							{
-								System.out.println("Book not Found");
+								if(searchId==book_id[i])
+								{
+									System.out.println("Book Found:"+"  "+book_name[i]);
+								}
+								else
+								{
+									System.out.println("Book not Found");
+								}
 							}
 						}
 					}

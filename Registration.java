@@ -45,13 +45,13 @@ class Registration
 				case 2:
 					
 					{
-						System.out.println("Enter the username:");
-						String username = sc1.nextLine();
-						System.out.println("Enter the pass:");
-						String pass = sc1.nextLine();
-						 
-						for(int i = 0;i<index;i++)
+						for(int i =0;i<index;i++)
 						{
+							System.out.println("Enter the username:");
+							String username = sc1.nextLine();
+							System.out.println("Enter the pass:");
+							String pass = sc1.nextLine();
+						 
 							if(user_name[i].equals(username))
 							{
 								if(password[i].equals(pass))
