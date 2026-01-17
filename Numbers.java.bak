@@ -1,0 +1,130 @@
+import java.util.Scanner;
+class Numbers
+{
+	Scanner sc = new Scanner(System.in);
+	int index = 0;
+	
+	int[] enterNumbers(int num[])
+	{
+		if(index<num.length)
+		{
+			System.out.println("Enter the numbers:"+(index+1));
+			num[index] = sc.nextInt();
+			index++;
+		}
+		else
+		{
+			System.out.println("No space Numbers filled");
+		}
+		return num;
+	}
+	
+	void displayNumbers(int num[])
+	{
+		for (int i=0;i<num.length;i++)
+		{
+			System.out.println("Display Number:"+(i+1)+"-"+num[i]);
+		}
+	}
+	
+	int countPositiveNumbers(int num[])
+	{
+		int count =0;
+		for(int i =0;i<num.length;i++)
+		{			
+			if(num[i]>0)
+			{
+				System.out.println("Positive Numbers:"+num[i]);
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	int countNegativeNumbers(int num[])
+	{
+		int count =0;
+		
+		for(int i =0;i<num.length;i++)
+		{
+			if(num[i]<0)
+			{
+				System.out.println("Negative Numbers:"+num[i]);
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	int countZeros(int num[])
+	{
+		int count = 0;
+		
+		for(int i =0;i<num.length;i++)
+		{
+			if(num[i]==0)
+			{
+				System.out.println("Zeros Numbers:"+num[i]);
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	void mainMenu()
+	{
+		int choice;
+		System.out.println("Enter the Length of Numbers:");
+		int length = sc.nextInt();
+		int numbers[] = new int[length];
+		
+		do
+		{
+			System.out.println("******Menu****");
+			System.out.println("Enter your choice:\n1.Enter the Number\n2.Display Numbers\n3.Count Positive Numbers\n4.Count Negative Numbers\n5.Count Zeros\n6.Exit");
+			choice = sc.nextInt();
+			
+			switch(choice)
+			{
+				case 1:
+					numbers = enterNumbers(numbers);
+					break;
+					
+				case 2:
+					displayNumbers(numbers);
+					break;
+					
+				case 3:
+					int positiveCount = countPositiveNumbers(numbers);
+					System.out.println("Positive Numbers:"+positiveCount);
+					break;
+					
+				case 4:
+					int negativeCount =countNegativeNumbers(numbers);
+					System.out.println("Negative Numbers:"+negativeCount);
+					break;
+					
+				case 5:
+					int zerosCount = countZeros(numbers);
+					System.out.println("Zeros:"+zerosCount);
+					break;
+					
+				case 6:
+					System.out.println("Exit");
+					break;
+					
+				default:
+					System.out.println("Invalid Choice");
+					break;
+			}
+		}while(choice!=6);
+	}
+	
+	public static void main(String[] args)
+	{
+		Numbers num = new Numbers();
+		num.mainMenu();
+	}
+	
+	
+}
