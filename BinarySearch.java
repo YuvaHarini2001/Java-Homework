@@ -1,16 +1,28 @@
-class BinarySearch2 
-{    
+import java.util.Scanner;
+class BinarySearch
+{ 
     public static void main(String[] args)
     {
-		int[] arr = {10,20,30,40,50};
-        int searchvalue = 30;
-        
-        BinarySearch2 obj = new BinarySearch2();
-        int index = obj.binarySearch(arr, searchvalue);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your length:");
+		int length = sc.nextInt();
+		
+		int[] arr = new int[length];
+		
+		for(int i =0;i<arr.length;i++)
+		{
+			System.out.println("Enter your index value"+(i+1)+":");
+			arr[i] = sc.nextInt();
+		}
+		System.out.println("Enter your searchvalue:");
+		int searchvalue = sc.nextInt();
+		
+        BinarySearch obj = new BinarySearch();
+        int index = obj.binarySearch(arr,searchvalue);
         System.out.println("Index:"+index);
     }
     
-    int binarySearch(int[] arr, int searchvalue)
+    int binarySearch(int[] arr,int searchvalue)
     {
         int left = 0;
         int right = arr.length-1;
