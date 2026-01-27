@@ -1,0 +1,91 @@
+import java.util.Scanner;
+import java.util.Arrays;
+class MergeSort1 
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the length of array:");
+		int length = sc.nextInt();
+		int[] arr = new int[length];
+		int i;
+		for(i=0;i<arr.length;i++)
+		{
+			System.out.println("Enter the value"+(i+1)+":");
+			arr[i] = sc.nextInt();
+		}
+		
+        MergeSort1 ms = new MergeSort1();
+        int[] newArr = ms.divide(arr);
+        ms.print(newArr);
+		ms.midElement(newArr);
+    }
+    
+    void print(int[] arr)
+    {
+		System.out.print("Sorted Array:");
+        for(int a : arr)
+        {
+            System.out.print(a+" ");
+        }
+    }
+	
+	void midElement(int[] newArr)
+	{
+		int midIndex = newArr.length/2;
+		int midElement = newArr[midIndex];
+		System.out.print("Mid Element:"+midElement);
+	}
+    
+    int[] divide(int[] arr)
+    {
+        if(arr.length == 1)
+        {
+            return arr;
+        }
+        
+        int mid = arr.length/2;
+        int[] left = divide(Arrays.copyOfRange(arr, 0, mid));
+        int[] right = divide(Arrays.copyOfRange(arr, mid, arr.length));
+
+        return merge(left, right);
+    }
+    
+    int[] merge(int[] left, int[] right)
+    {
+        int[] newArr = new int[left.length + right.length];
+        int i=0;
+        int j=0;
+        int k=0;
+        
+        while(i<left.length && j<right.length)
+        {
+            if(left[i] < right[j])
+            {
+                newArr[k] = left[i];
+                i++;
+                k++;
+            } else if(left[i]>right[j])
+            {
+                newArr[k] = right[j];
+                j++;
+                k++;
+            }
+        }
+    
+        while(i<left.length)
+        {
+            newArr[k] = left[i];
+            i++;
+            k++;
+        }
+        
+        while(j<right.length)
+        {
+            newArr[k] = right[j];
+            j++;
+            k++;
+        }
+        return newArr;
+    }
+}
