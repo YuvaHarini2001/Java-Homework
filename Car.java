@@ -1,18 +1,24 @@
-class Car
+
+package VehicleManagementSystem;
+
+public class Car extends Vehicle
 {
-	public static void main(String[] args)
-	{
-			String carName = "Tesla Model S";
-			String fuelType= "Electric";
-			String brand= "Tesla";
-			int mileage = 396;
-			double price= 85000.00d;
-			
-			System.out.println("car Name:"+carName);
-			System.out.println("Brand:"+brand);
-			System.out.println("Fuel Type:"+fuelType);
-			System.out.println("Mileage:"+mileage);
-			System.out.println("Price:"+price);
-		
-	}
+    int seats;
+    
+    Car(String brand, int year,int seats)
+    {
+        super(brand,year);
+        this.seats=seats;
+    }
+    
+    @Override
+    void display()
+    {
+        System.out.println("Vehicle Management System");
+        System.out.println("---------------");
+        System.out.println("Car:");
+        System.out.println("Brand:"+super.brand);
+        System.out.println("Year:"+super.year);
+        System.out.println("Seats:"+seats);
+    }
 }
